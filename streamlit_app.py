@@ -47,5 +47,10 @@ if ingredients_list:
         session.sql(my_insert_stmt).collect()
         st.success(f'Your Smoothie is ordered, {name_on_order}!', icon="✅")
 
+# NEW SECTION TO DISPLAY FRUITYVICE NUTRITION INFO
+import requests
+fruityvice_response=requests.get("https://fruityvice.com/api/fruit/watermetlo")
+st.text(fruityvice_response)
+
 
 
